@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administración | Ruta Motor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../CSS/style-index.css"><link rel="stylesheet" href="../CSS/style-perfil-admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../JS/comun.js" defer></script>
+  <script src="../JS/administrador.js" defer></script>
+</head>
+<body>
+  <main class="panel-pagina panel-administracion" id="vista-administrador">
+    <div class="acciones-cuenta"><a class="btn btn-outline-light" href="index.html">Inicio</a><button class="btn btn-outline-light" type="button" data-cerrar-sesion>Cerrar sesión</button></div>
+    <section data-vista-admin="bienvenida" class="bienvenida-admin">
+      <p class="etiqueta">Ruta Motor · Administración</p><h1>Bienvenido al panel de administración.</h1><p>Selecciona una sección para revisar los informes y gestionar la atención de clientes.</p>
+      <div class="opciones-admin"><button class="opcion-admin" type="button" data-panel="informes"><span>01</span><strong>Informes de ingreso</strong><small>Consultar diagnósticos y actualizar la atención.</small></button><button class="opcion-admin" type="button" data-panel="clientes"><span>02</span><strong>Clientes y servicios</strong><small>Actualizar teléfonos, correos y estado del servicio.</small></button></div>
+    </section>
+    <section data-vista-admin="informes" hidden><button class="btn btn-outline-light volver-panel" id="volver-paneles" type="button">← Volver al panel</button><p class="etiqueta">Recepción de vehículos</p><h1>Informes de ingreso</h1><p class="texto-panel">Los nombres y la fecha de ingreso se mantienen como fueron registrados. Puedes actualizar los datos de contacto, fallas, diagnóstico, recomendaciones y estado.</p><div id="lista-admin-informes"></div></section>
+    <section data-vista-admin="clientes" hidden><button class="btn btn-outline-light volver-panel" type="button" data-panel="bienvenida">← Volver al panel</button><p class="etiqueta">Atención al cliente</p><h1>Clientes y servicios</h1><p class="texto-panel">Actualiza los datos de contacto y el estado de cada servicio. El nombre del cliente no se puede modificar.</p><div id="lista-admin-clientes"></div></section>
+  </main>
+  <div id="footer"></div>
+</body>
+</html>
+

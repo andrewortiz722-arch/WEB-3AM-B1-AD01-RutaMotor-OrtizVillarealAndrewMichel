@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Accede a los servicios de Ruta Motor.">
+  <title>Iniciar sesión | Ruta Motor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../CSS/style-index.css">
+  <link rel="stylesheet" href="../CSS/style-login.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../JS/comun.js" defer></script>
+  <script src="../JS/acceso.js" defer></script>
+</head>
+<body>
+  
+  <main class="login-page">
+    <section class="login-card" aria-labelledby="login-title">
+      <p class="eyebrow">Área de acceso</p>
+      <h1 id="login-title">Qué gusto verte.</h1>
+      <p class="login-card__intro">Ingresa con tus datos para continuar.</p>
+      <!-- VALIDACIÓN DEL USUARIO Y LA CONTRASEÑA: ambos campos son obligatorios. -->
+      <form id="login-form" class="login-form">
+        <label for="username">Usuario</label>
+        <input class="form-control" id="username" name="username" type="text" autocomplete="username" placeholder="Escribe tu usuario" required>
+        <label for="password">Contraseña</label>
+        <input class="form-control" id="password" name="password" type="password" autocomplete="current-password" placeholder="Escribe tu contraseña" required>
+        <button class="btn btn-primary login-submit" type="submit">Ingresar</button>
+        <p id="login-message" class="login-message" role="status" aria-live="polite"></p>
+      </form>
+
+      <aside class="credenciales-acceso" aria-labelledby="credentials-title">
+        <p class="eyebrow">Acceso de clientes y personal</p>
+        <h2 id="credentials-title">Accesos del taller</h2>
+        <p class="credenciales-acceso__nota">Selecciona el tipo de acceso e ingresa los datos correspondientes.</p>
+        <div class="credential-row">
+          <h3>Administrador</h3>
+          <p><span>Usuario</span><code>admin</code></p>
+          <p><span>Contraseña</span><code>admin123</code></p>
+        </div>
+        <div class="credential-row">
+          <h3>Usuario</h3>
+          <p><span>Usuario</span><code>usuario</code></p>
+          <p><span>Contraseña</span><code>usuario123</code></p>
+        </div>
+      </aside>
+      <a class="back-link" href="index.html">← Volver al inicio</a>
+    </section>
+  </main>
+  <div id="footer"></div>
+</body>
+</html>
+
+
+
+
+

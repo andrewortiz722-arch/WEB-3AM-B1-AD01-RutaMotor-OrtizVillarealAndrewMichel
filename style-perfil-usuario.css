@@ -1,0 +1,35 @@
+/* Gives the intake page more horizontal room and a calmer vertical rhythm. */
+.panel-pagina {
+  width: min(100%, 1320px); /* Uses more of the desktop width without stretching indefinitely. */
+  min-height: 70vh; /* Keeps enough height for the complete page to scroll naturally. */
+  margin: 0 auto; /* Centers the page. */
+  padding: clamp(52px, 7vw, 88px) clamp(22px, 5vw, 72px); /* Adds space on both axes. */
+}
+.panel-pagina > h1 { margin-bottom: 12px; font-size: clamp(32px, 4vw, 46px); }
+.panel-pagina > p:not(.etiqueta) { max-width: 760px; margin-bottom: 28px; color: var(--color-texto-suave); }
+
+/* Gives each form group generous padding and separation. */
+.ficha-ingreso { gap: 30px; margin: 30px 0; padding: clamp(22px, 3vw, 34px); }
+.ficha-ingreso fieldset { min-width: 0; margin: 0; padding: clamp(20px, 3vw, 30px); border: 1px solid var(--color-borde); border-radius: 10px; }
+.ficha-ingreso legend { float: none; width: auto; padding: 0 10px; color: var(--color-acento); font-family: var(--fuente-titulos); font-size: 19px; font-weight: 700; }
+
+/* Uses the available width for two or three fields, then wraps on narrower screens. */
+.rejilla-formulario { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 22px 26px; }
+.rejilla-formulario label { display: grid; align-content: start; gap: 9px; color: var(--color-texto-suave); font-size: 14px; }
+.rejilla-formulario input, .rejilla-formulario select, .rejilla-formulario textarea { width: 100%; min-height: 48px; padding: 11px 13px; border: 1px solid var(--color-borde); border-radius: 6px; background: var(--color-fondo); color: var(--color-texto); font: inherit; }
+.rejilla-formulario textarea { resize: vertical; }
+.rejilla-formulario--abajo { margin-top: 24px; }
+.texto-ayuda { margin-bottom: 18px; color: var(--color-texto-suave); font-size: 14px; }
+.opciones-casilla { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px 24px; }
+.opciones-casilla label, .confirmacion-casilla { display: flex; align-items: flex-start; gap: 11px; color: var(--color-texto-suave); font-size: 14px; }
+.opciones-casilla input, .confirmacion-casilla input { flex: 0 0 auto; margin-top: 4px; accent-color: var(--color-acento); }
+.ficha-ingreso > .boton { width: max-content; min-height: 48px; padding: 11px 22px; border: 0; cursor: pointer; }
+.mensaje-formulario { min-height: 24px; margin: 0; color: var(--color-acento); }
+
+@media (max-width: 640px) {
+  .panel-pagina { padding: 42px 18px; } /* Preserves breathing room on phones. */
+  .ficha-ingreso { gap: 22px; padding: 15px; } /* Avoids overly tight fieldsets on small screens. */
+  .ficha-ingreso fieldset { padding: 17px; }
+  .rejilla-formulario, .opciones-casilla { grid-template-columns: 1fr; } /* Stacks form controls on narrow screens. */
+}
+

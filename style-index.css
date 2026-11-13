@@ -1,0 +1,351 @@
+/* Importa las fuentes usadas en los títulos y en los textos. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* Variables centrales: cambia estos valores para recolorear todo el index. */
+:root {
+  color-scheme: dark; /* Pide al navegador controles compatibles con el tema oscuro. */
+  --color-fondo: #25272b; /* Fondo general de las secciones. */
+  --color-fondo-oscuro: #17191c; /* Fondo del encabezado y pie de página. */
+  --color-panel: #303238; /* Fondo alterno para destacar la sección de servicios. */
+  --color-tarjeta: #2b2d32; /* Fondo de elementos tipo tarjeta si se agregan después. */
+  --color-texto: #f0eee9; /* Color principal de títulos y texto. */
+  --color-texto-suave: #b9b7b2; /* Color de párrafos secundarios. */
+  --color-acento: #d17b4f; /* Color de botones y detalles destacados. */
+  --color-acento-texto: #211a17; /* Texto oscuro colocado sobre el acento claro. */
+  --color-borde: #484a50; /* Color de bordes y separadores. */
+  --fuente-texto: 'DM Sans', sans-serif; /* Fuente para párrafos, enlaces y botones. */
+  --fuente-titulos: 'Manrope', sans-serif; /* Fuente para encabezados. */
+}
+
+/* Incluye bordes y relleno dentro del tamaño total de cada elemento. */
+* { box-sizing: border-box; }
+
+/* Activa desplazamiento suave al pulsar enlaces a secciones. */
+html { min-height: 100%; overflow-y: auto; scroll-behavior: smooth; }
+
+/* Establece el fondo, el color de texto y la tipografía generales. */
+body {
+  margin: 0; /* Quita el margen predeterminado del navegador. */
+  background: var(--color-fondo); /* Cambia el color de fondo general. */
+  color: var(--color-texto); /* Cambia el color base del texto. */
+  font-family: var(--fuente-texto); /* Aplica la fuente de lectura. */
+  line-height: 1.65; /* Separa las líneas para facilitar la lectura. */
+  overflow-x: hidden; /* Evita que contenido ancho genere desplazamiento horizontal. */
+  overflow-y: auto; /* Permite desplazar verticalmente toda la página. */
+}
+
+/* Hace que los enlaces hereden el color del elemento que los contiene. */
+a { color: inherit; }
+
+/* Encabezado normal: position static hace que se desplace con el documento. */
+.encabezado-sitio {
+  position: static !important; /* Mantiene el encabezado en el flujo y hace que se desplace con la página. */
+  display: flex; /* Alinea la marca y la navegación en una fila. */
+  align-items: center; /* Centra verticalmente los elementos. */
+  justify-content: space-between; /* Separa la marca de los enlaces. */
+  min-height: 76px; /* Establece la altura mínima del encabezado. */
+  padding: 0 clamp(20px, 7vw, 100px); /* Ajusta los márgenes según el ancho de pantalla. */
+  background: var(--color-fondo-oscuro); /* Aplica el fondo oscuro de marca. */
+  border-bottom: 1px solid var(--color-borde); /* Separa visualmente el encabezado del contenido. */
+}
+
+/* Agrupa el sello y el nombre de la marca. */
+.marca-sitio { display: inline-flex; align-items: center; gap: 11px; color: var(--color-texto); text-decoration: none; }
+
+/* Da énfasis a las iniciales del taller. */
+.marca-sitio__sello { display: grid; width: 40px; height: 40px; place-items: center; border-radius: 9px; background: var(--color-acento); color: var(--color-acento-texto); font-weight: 800; }
+
+/* Estiliza el nombre principal de la marca. */
+.marca-sitio__nombre { font-family: var(--fuente-titulos); font-size: 14px; font-weight: 800; letter-spacing: .12em; }
+
+/* Colorea y separa la segunda línea del nombre. */
+.marca-sitio__nombre span { display: block; color: var(--color-acento); font-size: 10px; letter-spacing: .24em; }
+
+/* Muestra los enlaces de navegación en una fila. */
+.navegacion-sitio { display: flex; align-items: center; gap: clamp(14px, 2.5vw, 32px); }
+
+/* Da color y tamaño a los enlaces del menú. */
+.navegacion-sitio a { color: var(--color-texto-suave); font-size: 13px; font-weight: 600; text-decoration: none; }
+
+/* Resalta el enlace al pasar el puntero. */
+.navegacion-sitio a:hover { color: var(--color-acento); }
+
+/* Distingue el enlace de ingreso con un borde. */
+.navegacion-sitio .navegacion-sitio__login { padding: 8px 14px; border: 1px solid var(--color-borde); border-radius: 5px; color: var(--color-texto); }
+
+/* El botón de menú aparece solo en pantallas pequeñas. */
+.boton-menu { display: none; border: 0; background: transparent; color: var(--color-acento); font-size: 24px; cursor: pointer; }
+/* Presenta el mensaje principal sobre un fondo verde oscuro. */
+.portada {
+  min-height: 390px; /* Reserva altura para que la introducción destaque. */
+  padding: clamp(58px, 9vw, 110px) clamp(22px, 12vw, 170px); /* Controla espacio interior adaptable. */
+  background: linear-gradient(120deg, #252a32, #35323a); /* Cambia el fondo de la portada a grafito con matiz violeta. */
+}
+
+/* Estilo compartido para pequeñas etiquetas de sección. */
+.etiqueta { margin: 0 0 12px; color: var(--color-acento); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+
+/* Define la familia de fuente para todos los encabezados. */
+h1, h2, h3 { font-family: var(--fuente-titulos); }
+
+/* Da tamaño y jerarquía al título principal. */
+.portada h1 { max-width: 680px; margin: 0 0 15px; font-size: clamp(40px, 7vw, 68px); font-weight: 600; letter-spacing: -.05em; line-height: 1.08; }
+
+/* Limita el ancho del texto principal y lo pinta con tono suave. */
+.texto-portada { max-width: 560px; margin: 0 0 25px; color: #d5d3cf; font-size: 16px; }
+
+/* Convierte la llamada principal en un botón. */
+.boton { display: inline-block; padding: 10px 17px; border-radius: 5px; background: var(--color-acento); color: var(--color-acento-texto); font-size: 13px; font-weight: 700; text-decoration: none; }
+
+/* Añade una transición discreta al botón al pasar el puntero. */
+.boton:hover { background: #e09468; }
+
+/* Da aspecto de enlace secundario a la llamada de contacto. */
+.enlace-portada { margin-left: 16px; color: var(--color-texto); font-size: 13px; font-weight: 600; text-decoration-color: var(--color-acento); text-underline-offset: 4px; }
+
+/* Da espacio y ancho de lectura a los apartados informativos. */
+.seccion { padding: 68px clamp(22px, 12vw, 170px); }
+
+/* Define tamaño, margen y jerarquía de los títulos de sección. */
+.seccion h2 { margin: 0 0 14px; font-size: clamp(27px, 4vw, 38px); letter-spacing: -.04em; line-height: 1.2; }
+
+/* Limita el ancho de párrafos para facilitar la lectura. */
+.seccion > p:not(.etiqueta) { max-width: 720px; color: var(--color-texto-suave); }
+
+/* Colorea servicios con el fondo alterno, distinguible del resto de la página. */
+.seccion-servicios { background: var(--color-panel); }
+
+/* Coloca los servicios en una fila cuando hay espacio. */
+.lista-servicios { display: flex; flex-wrap: wrap; gap: 12px 34px; margin: 22px 0 0; padding-left: 20px; color: var(--color-texto-suave); }
+
+/* Resalta las viñetas de la lista con el color de acento. */
+.lista-servicios li::marker { color: var(--color-acento); }
+
+/* Separa visualmente el apartado de contacto con un borde superior. */
+.contacto { border-top: 1px solid var(--color-borde); }
+
+/* Colorea las etiquetas fuertes del contacto. */
+.contacto strong { color: var(--color-texto); }
+
+/* Evita que los párrafos de contacto queden muy separados. */
+.contacto p { margin-bottom: 8px; }
+
+/* Da formato al pie de página cargado desde la plantilla. */
+.site-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 24px clamp(20px, 7vw, 100px); background: #17191c; color: var(--color-texto); }
+
+/* Deja que la frase del pie ocupe el espacio disponible. */
+.footer__tagline { flex: 1; margin: 0; color: var(--color-texto-suave); font-size: 13px; }
+
+/* Reduce el tamaño del texto legal del pie. */
+.footer__copy { margin: 0; color: var(--color-texto-suave); font-size: 12px; }
+
+/* Ajusta navegación y secciones a pantallas pequeñas. */
+@media (max-width: 640px) {
+  .encabezado-sitio { flex-wrap: wrap; min-height: 66px; padding: 0 18px; } /* Permite que el menú móvil pase a una fila propia. */
+  .boton-menu { display: block; } /* Muestra el botón del menú móvil. */
+  .navegacion-sitio { display: none; flex-basis: 100%; align-items: stretch; flex-direction: column; gap: 0; padding: 8px 0 16px; } /* Oculta el menú móvil dentro del flujo del encabezado. */
+  .navegacion-sitio--abierta { display: flex; } /* Muestra el menú al pulsar el botón. */
+  .navegacion-sitio a { padding: 10px 4px; } /* Hace más cómodos los enlaces táctiles. */
+  .navegacion-sitio .navegacion-sitio__login { text-align: center; } /* Centra el enlace de login en el menú móvil. */
+  .portada { min-height: 0; padding: 65px 22px; } /* Ajusta la portada a la altura del teléfono. */
+  .seccion { padding: 55px 22px; } /* Reduce el espacio de las secciones en móvil. */
+  .lista-servicios { flex-direction: column; gap: 8px; } /* Apila los servicios en una columna. */
+  .site-footer { align-items: flex-start; flex-direction: column; padding: 24px 22px; } /* Apila los datos del pie de página. */
+}
+
+
+/* Marco oscuro para agrupar y destacar la cinta de fotografías. */
+.cinta-imagen {
+  max-width: 900px; /* Limita el ancho de la galería en pantallas grandes. */
+  margin: 36px auto 0; /* Centra la cinta y la separa de la lista de servicios. */
+}
+
+/* Da tamaño fijo al espacio de la foto para evitar saltos entre imágenes. */
+.cinta-imagen__diapositivas {
+  position: relative; /* Sirve de referencia para los textos sobre cada imagen. */
+  overflow: hidden; /* Recorta la foto a los bordes redondeados. */
+  min-height: 400px; /* Da más altura a la zona de fotografías. */
+  border: 1px solid var(--color-borde); /* Dibuja un borde discreto. */
+  border-radius: 10px; /* Redondea las esquinas del marco. */
+  background: #202226; /* Fondo oscuro visible durante la carga de las fotos. */
+}
+
+/* Ocupa todo el marco con la diapositiva activa. */
+.diapositiva {
+  position: relative; /* Permite poner el pie de foto encima de la imagen. */
+  min-height: 400px; /* Mantiene alta la diapositiva para dar más espacio vertical a la foto. */
+  margin: 0; /* Quita el margen predeterminado de figure. */
+  animation: aparecer-foto .45s ease both; /* Suaviza la entrada de cada imagen. */
+}
+
+/* Hace que cada archivo de imagen cubra el marco sin deformarse. */
+.diapositiva img {
+  position: absolute; /* Permite cubrir el área completa de la diapositiva. */
+  inset: 0; /* Estira la imagen hasta los cuatro bordes. */
+  width: 100%; /* Ajusta el ancho de imagen al marco. */
+  height: 100%; /* Ajusta el alto de imagen al marco. */
+  object-fit: cover; /* Recorta los bordes sobrantes sin deformar la foto. */
+}
+
+/* Añade una capa oscura sobre la foto para que el pie sea legible. */
+.diapositiva figcaption {
+  position: absolute; /* Coloca el texto encima de la parte inferior de la foto. */
+  right: 0; /* Extiende la franja hasta el borde derecho. */
+  bottom: 0; /* Pega la franja al borde inferior. */
+  left: 0; /* Extiende la franja hasta el borde izquierdo. */
+  padding: 30px 20px 16px; /* Da aire al texto y al degradado de fondo. */
+  background: linear-gradient(transparent, rgba(10, 17, 13, .9)); /* Oscurece solo bajo el texto. */
+  color: #f1f3ee; /* Usa texto claro sobre la capa oscura. */
+  font-size: 14px; /* Mantiene el pie legible sin competir con la foto. */
+  font-weight: 600; /* Resalta brevemente el tipo de trabajo. */
+}
+
+/* Muestra un fondo alternativo cuando todavía no existe el archivo de foto. */
+.diapositiva--sin-foto {
+  background: linear-gradient(135deg, #414047, #25272b); /* Evita mostrar una imagen rota. */
+}
+
+/* Escribe dentro del marcador qué archivo debe agregarse a IMG. */
+.diapositiva--sin-foto::before {
+  position: absolute; /* Centra el texto del marcador dentro del marco. */
+  inset: 0; /* Da al pseudo-elemento el tamaño de toda la diapositiva. */
+  display: grid; /* Permite centrar el texto horizontal y verticalmente. */
+  place-items: center; /* Centra el mensaje de imagen pendiente. */
+  padding: 20px; /* Evita que el mensaje toque los bordes en móvil. */
+  color: #d5d3cf; /* Mantiene buen contraste sobre el fondo oscuro. */
+  content: var(--texto-foto-vacia, "Agrega una imagen dentro de la carpeta IMG"); /* Explica qué foto falta. */
+  font-size: 14px; /* Define tamaño del aviso del marcador. */
+  text-align: center; /* Centra mensajes que ocupen varias líneas. */
+}
+
+/* Coloca los botones de cambio bajo la fotografía. */
+.cinta-imagen__controles {
+  display: flex; /* Ordena flecha anterior, puntos y flecha siguiente. */
+  align-items: center; /* Alinea los controles verticalmente. */
+  justify-content: center; /* Centra el grupo debajo de la galería. */
+  gap: 18px; /* Separa las flechas de los indicadores. */
+  padding-top: 14px; /* Separa los controles del borde de la imagen. */
+}
+
+/* Define el estilo de las flechas para cambiar de foto. */
+.control-cinta {
+  display: grid; /* Centra la flecha dentro del botón. */
+  width: 36px; /* Define el ancho del botón. */
+  height: 36px; /* Define el alto del botón. */
+  place-items: center; /* Centra la flecha. */
+  border: 1px solid var(--color-borde); /* Dibuja un contorno discreto. */
+  border-radius: 50%; /* Hace redondo el control. */
+  background: var(--color-fondo); /* Usa el fondo general del sitio. */
+  color: var(--color-acento); /* Pinta la flecha con el color destacado. */
+  font-size: 18px; /* Da tamaño suficiente al símbolo de flecha. */
+  cursor: pointer; /* Indica que el elemento se puede pulsar. */
+}
+
+/* Agrupa los puntos que muestran cuántas fotos hay. */
+.indicadores-cinta { display: flex; align-items: center; gap: 8px; }
+
+/* Dibuja un punto para cada fotografía. */
+.indicador-cinta {
+  width: 8px; /* Define el ancho del punto inactivo. */
+  height: 8px; /* Define el alto del punto inactivo. */
+  padding: 0; /* Elimina el espacio interno del botón. */
+  border: 0; /* Quita el borde predeterminado del botón. */
+  border-radius: 50%; /* Convierte el indicador en un círculo. */
+  background: #686a70; /* Da un tono apagado a los puntos inactivos. */
+  cursor: pointer; /* Indica que el punto se puede pulsar. */
+}
+
+/* Destaca el punto correspondiente a la foto que se está mostrando. */
+.indicador-cinta--activo { width: 20px; border-radius: 8px; background: var(--color-acento); }
+
+/* Desvanece suavemente cada foto nueva al aparecer. */
+@keyframes aparecer-foto {
+  from { opacity: .45; } /* Inicia la foto algo transparente. */
+  to { opacity: 1; } /* Termina la entrada con opacidad completa. */
+}
+
+/* Reduce la altura del marco en teléfonos para no ocupar toda la pantalla. */
+@media (max-width: 640px) {
+  .cinta-imagen__diapositivas, .diapositiva { min-height: 260px; } /* Ajusta la altura de la galería en móviles. */
+}
+
+
+
+/* Personaliza los componentes Bootstrap con la paleta grafito y terracota. */
+:root { --bs-primary: #d17b4f; --bs-primary-rgb: 209, 123, 79; --bs-body-bg: #25272b; --bs-body-color: #f0eee9; --bs-border-color: #484a50; --bs-link-color: #e09468; --bs-link-hover-color: #f1a77e; }
+.btn-primary { --bs-btn-color: #211a17; --bs-btn-bg: #d17b4f; --bs-btn-border-color: #d17b4f; --bs-btn-hover-color: #211a17; --bs-btn-hover-bg: #e09468; --bs-btn-hover-border-color: #e09468; --bs-btn-active-bg: #bd6940; --bs-btn-active-border-color: #bd6940; }
+.form-control:focus, .form-select:focus, .form-check-input:focus { border-color: #d17b4f; box-shadow: 0 0 0 .25rem rgba(209, 123, 79, .25); }
+.form-check-input:checked { border-color: #d17b4f; background-color: #d17b4f; }
+
+
+
+/* Separa la presentación del taller de su lista de valores. */
+.quienes-somos {
+  display: grid; /* Organiza la sección en dos columnas. */
+  grid-template-columns: 1.1fr .9fr; /* Da más ancho a la presentación que a los valores. */
+  gap: clamp(32px, 7vw, 90px); /* Mantiene aire entre las columnas. */
+  align-items: center; /* Centra verticalmente ambos bloques. */
+  background: #2b2d32; /* Diferencia quiénes somos del fondo general grafito. */
+}
+
+/* Limita el texto para que se lea cómodamente. */
+.quienes-somos__presentacion > p:not(.etiqueta) { max-width: 620px; color: var(--color-texto-suave); }
+
+/* Hace el título de la sección más protagonista. */
+.quienes-somos h2 { max-width: 600px; margin-bottom: 20px; font-size: clamp(32px, 4.5vw, 48px); }
+
+/* Distingue el encabezado que introduce los valores del taller. */
+.quienes-somos__titulo { margin-bottom: 10px; color: var(--color-acento); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+
+/* Divide los valores con líneas sutiles. */
+.valor-taller { display: flex; gap: 17px; padding: 18px 0; border-top: 1px solid var(--color-borde); }
+
+/* Destaca el número de cada valor con el color terracota. */
+.valor-taller > span { color: var(--color-acento); font-family: var(--fuente-titulos); font-size: 13px; font-weight: 800; }
+
+/* Ajusta el título de cada compromiso. */
+.valor-taller h3 { margin: 0 0 5px; color: var(--color-texto); font-size: 16px; }
+
+/* Da formato al texto explicativo de los compromisos. */
+.valor-taller p { margin: 0; color: var(--color-texto-suave); font-size: 13px; }
+
+@media (max-width: 760px) {
+  .quienes-somos { grid-template-columns: 1fr; gap: 24px; } /* Apila presentación y valores en pantallas estrechas. */
+}
+
+/* Pantalla de bienvenida del cliente. */
+.bienvenida-usuario { padding: clamp(28px, 5vw, 58px); border: 1px solid var(--color-borde); border-radius: 14px; background: linear-gradient(135deg, #303238, #24262b); }
+.bienvenida-usuario h1, .bienvenida-admin h1 { max-width: 820px; font-size: clamp(34px, 5vw, 54px); }
+.bienvenida-usuario > p:not(.etiqueta), .bienvenida-admin > p:not(.etiqueta) { max-width: 700px; color: var(--color-texto-suave); }
+.estado-cliente { display: flex; gap: 12px; align-items: center; margin: 28px 0; color: var(--color-texto-suave); }
+.estado-cliente strong { padding: 6px 13px; border: 1px solid var(--color-borde); border-radius: 20px; color: var(--color-acento); }
+.solicitud-baja { margin-top: 34px; padding-top: 20px; border-top: 1px solid var(--color-borde); color: var(--color-texto-suave); }
+.solicitud-baja #mensaje-baja { margin-top: 10px; color: var(--color-acento); }
+.bloque-formulario { margin-top: 54px; scroll-margin-top: 24px; }
+.encabezado-bloque { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 26px; }
+.encabezado-bloque h2, .seccion-informes h2 { font-size: clamp(28px, 4vw, 40px); }
+.encabezado-bloque > p { max-width: 390px; color: var(--color-texto-suave); }
+.seccion-informes { margin-top: 56px; padding-top: 34px; border-top: 1px solid var(--color-borde); }
+.tarjeta-informe { margin: 18px 0; padding: clamp(18px, 3vw, 28px); border: 1px solid var(--color-borde); border-radius: 10px; background: var(--color-panel); }
+.tarjeta-informe__cabecera { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.tarjeta-informe__cabecera h3 { margin-bottom: 8px; }
+.etiqueta-estado { color: var(--color-acento); font-size: 13px; font-weight: 700; }
+.tarjeta-informe p { color: var(--color-texto-suave); }
+
+/* Bienvenida y cuadros de selección de las tareas administrativas. */
+.bienvenida-admin { padding: clamp(28px, 5vw, 58px); border: 1px solid var(--color-borde); border-radius: 14px; background: linear-gradient(135deg, #303238, #24262b); }
+.opciones-admin { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 34px; }
+.opcion-admin { display: grid; gap: 10px; min-height: 170px; padding: 22px; border: 1px solid var(--color-borde); border-radius: 10px; background: #25272b; color: var(--color-texto); text-align: left; cursor: pointer; transition: border-color .2s, transform .2s; }
+.opcion-admin:hover { transform: translateY(-3px); border-color: var(--color-acento); }
+.opcion-admin span { color: var(--color-acento); font-weight: 800; }
+.opcion-admin strong { font-family: var(--fuente-titulos); font-size: 20px; }
+.opcion-admin small, .texto-panel { color: var(--color-texto-suave); }
+.volver-panel { margin-bottom: 25px; }
+.rejilla-admin { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 16px 20px; margin: 20px 0; }
+.rejilla-admin label { display: grid; gap: 7px; color: var(--color-texto-suave); font-size: 13px; }
+.aviso-edicion { min-height: 20px; margin: 10px 0 0; color: var(--color-acento); }
+@media (max-width: 640px) {
+  .encabezado-bloque { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .opciones-admin { grid-template-columns: 1fr; }
+}
+.acciones-cuenta { display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 20px; }

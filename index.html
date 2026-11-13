@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Descripción breve que aparece en resultados de búsqueda. -->
+  <meta name="description" content="Mantenimiento y reparación de vehículos con atención clara y confiable.">
+  <!-- Texto que aparece en la pestaña del navegador. -->
+  <title>Ruta Motor | Taller automotriz</title>
+  <!-- Conecta esta página con sus estilos, guardados fuera de la carpeta html. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../CSS/style-index.css">
+  <!-- Carga el JavaScript al terminar de leer el HTML. -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../JS/comun.js" defer></script>
+  <script src="../JS/inicio.js" defer></script>
+</head>
+<body>
+  <!-- comun.js coloca aquí la plantilla compartida del encabezado. -->
+  <div id="header"></div>
+
+  <!-- main contiene la información principal de esta página. -->
+  <main>
+    <!-- Inicio: presentación rápida y enlaces a servicios y contacto. -->
+    <section class="portada" id="inicio">
+      <p class="etiqueta">Taller de reparación de vehículos</p>
+      <h1>Tu vehículo en buenas manos.</h1>
+      <p class="texto-portada">En Ruta Motor cuidamos tu auto con atención honesta, mantenimiento y reparación confiable.</p>
+      <a class="boton" href="#servicios">Ver servicios</a>
+      <a class="enlace-portada" href="#contacto">Visítanos</a>
+    </section>
+
+    <!-- Quiénes somos: presentación, propósito y valores del taller. -->
+    <section class="seccion quienes-somos" id="nosotros" aria-labelledby="titulo-nosotros">
+      <div class="quienes-somos__presentacion">
+        <p class="etiqueta">Quiénes somos</p>
+        <h2 id="titulo-nosotros">Mecánica clara. Atención de confianza.</h2>
+        <p>En Ruta Motor recibimos cada vehículo con atención y escuchamos lo que necesita su dueño. Revisamos, explicamos las opciones y realizamos el trabajo con responsabilidad.</p>
+        <p>Queremos que cada cliente sepa qué se hizo en su auto y se sienta acompañado desde la primera consulta hasta volver a la carretera.</p>
+      </div>
+      <div class="quienes-somos__compromiso">
+        <p class="quienes-somos__titulo">Nuestra forma de trabajar</p>
+        <article class="valor-taller"><span>01</span><div><h3>Hablamos con claridad</h3><p>Explicamos el diagnóstico y resolvemos tus dudas antes del trabajo.</p></div></article>
+        <article class="valor-taller"><span>02</span><div><h3>Trabajamos con cuidado</h3><p>Atendemos cada vehículo con responsabilidad y atención al detalle.</p></div></article>
+        <article class="valor-taller"><span>03</span><div><h3>Te acompañamos</h3><p>Buscamos que tengas información clara durante el servicio.</p></div></article>
+      </div>
+    </section>
+
+    <!-- Servicios: resumen de los trabajos principales. -->
+    <section class="seccion seccion-servicios" id="servicios">
+      <p class="etiqueta">Nuestro trabajo</p>
+      <h2>¿En qué podemos ayudarte?</h2>
+      <ul class="lista-servicios">
+        <li>Mantenimiento preventivo</li>
+        <li>Reparación mecánica</li>
+        <li>Diagnóstico automotriz</li>
+      </ul>
+
+      <!-- Cinta automática: coloca tus fotos en IMG y conserva estos nombres o cambia cada src. -->
+      <div class="cinta-imagen" id="cinta-imagen" aria-label="Galería de trabajos del taller" aria-roledescription="carrusel">
+        <div class="cinta-imagen__diapositivas" aria-live="off">
+          <figure class="diapositiva diapositiva--activa" aria-hidden="false">
+            <img src="../IMG/imagen1.jpg" alt="Mecánico trabajando en un vehículo dentro del taller" data-texto-vacio="Añade tu primera foto en IMG/imagen1.jpg">
+            <figcaption>Reparación de carrocería y mantenimiento</figcaption>
+          </figure>
+          <figure class="diapositiva" aria-hidden="true" hidden>
+            <img src="../IMG/imagen2.jpg" alt="Dos mecánicos reparando una rueda" data-texto-vacio="Añade tu segunda foto en IMG/imagen2.jpg">
+            <figcaption>Trabajo mecánico en un taller independiente</figcaption>
+          </figure>
+          <figure class="diapositiva" aria-hidden="true" hidden>
+            <img src="../IMG/imagen3.jpg" alt="Interior de un taller automotriz" data-texto-vacio="Añade tu tercera foto en IMG/imagen3.jpg">
+            <figcaption>Espacio de trabajo y servicio automotriz</figcaption>
+          </figure>
+          <figure class="diapositiva" aria-hidden="true" hidden>
+            <img src="../IMG/imagen4.jpg" alt="Mecánico revisando el motor de un vehículo" data-texto-vacio="Añade tu cuarta foto en IMG/imagen4.jpg">
+            <figcaption>Revisión del motor</figcaption>
+          </figure>
+          <figure class="diapositiva" aria-hidden="true" hidden>
+            <img src="../IMG/imagen5.jpg" alt="Mecánicos trabajando en una rueda" data-texto-vacio="Añade tu quinta foto en IMG/imagen5.jpg">
+            <figcaption>Reparación de rueda y suspensión</figcaption>
+          </figure>
+          <figure class="diapositiva" aria-hidden="true" hidden>
+            <img src="../IMG/imagen6.jpg" alt="Detalle de una revisión mecánica del motor" data-texto-vacio="Añade tu sexta foto en IMG/imagen6.jpg">
+            <figcaption>Trabajo de diagnóstico en el motor</figcaption>
+          </figure>
+
+        </div>
+        <div class="cinta-imagen__controles">
+          <button class="control-cinta" type="button" data-paso="-1" aria-label="Mostrar imagen anterior">←</button>
+          <div class="indicadores-cinta" aria-label="Elegir imagen">
+            <button class="indicador-cinta indicador-cinta--activo" type="button" data-indice="0" aria-label="Mostrar imagen 1" aria-current="true"></button>
+            <button class="indicador-cinta" type="button" data-indice="1" aria-label="Mostrar imagen 2" aria-current="false"></button>
+            <button class="indicador-cinta" type="button" data-indice="2" aria-label="Mostrar imagen 3" aria-current="false"></button>
+            <button class="indicador-cinta" type="button" data-indice="3" aria-label="Mostrar imagen 4" aria-current="false"></button>
+            <button class="indicador-cinta" type="button" data-indice="4" aria-label="Mostrar imagen 5" aria-current="false"></button>
+            <button class="indicador-cinta" type="button" data-indice="5" aria-label="Mostrar imagen 6" aria-current="false"></button>
+          </div>
+          <button class="control-cinta" type="button" data-paso="1" aria-label="Mostrar imagen siguiente">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto: reemplaza los datos entre corchetes con los reales. -->
+    <section class="seccion contacto" id="contacto">
+      <p class="etiqueta">Dónde encontrarnos</p>
+      <h2>Hablemos de tu vehículo.</h2>
+      <p><strong>Dirección:</strong> Solanda, sector 1, Av. Fernando Peñafiel</p>
+      <p><strong>Teléfono:</strong> <a href="tel:+593984734909">098 473 4909</a></p>
+      <p><strong>Horario:</strong> Lunes a viernes, de 8:00 a 18:00; sábados, de 8:00 a 13:00.</p>
+    </section>
+  </main>
+
+  <!-- comun.js coloca aquí la plantilla compartida del pie de página. -->
+  <div id="footer"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+.panel-pagina { max-width: 1050px; min-height: 70vh; margin: 0 auto; padding: 55px 24px; }
+.panel-pagina h1, .panel-pagina h2 { color: var(--color-texto); }
+.formulario-panel, .registro-panel { display: grid; gap: 12px; margin: 20px 0 32px; padding: 20px; border: 1px solid var(--color-borde); border-radius: 8px; background: var(--color-panel); }
+.formulario-panel label, .registro-panel label { display: grid; gap: 5px; color: var(--color-texto-suave); }
+.formulario-panel input, .formulario-panel textarea, .registro-panel input, .registro-panel select, .registro-panel textarea { width: 100%; padding: 10px; border: 1px solid var(--color-borde); border-radius: 5px; background: var(--color-fondo); color: var(--color-texto); font: inherit; }
+.registro-panel button { width: max-content; padding: 8px 14px; border: 0; border-radius: 5px; background: var(--color-acento); color: var(--color-acento-texto); font-weight: 700; cursor: pointer; }
